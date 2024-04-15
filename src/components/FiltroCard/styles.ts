@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
+import { Props } from '.'
+
+type omitProps = Omit<Props, 'contador' | 'legenda'>
+
+export const Card = styled.div<omitProps>`
   padding: 8px;
-  border: 1px solid #a1a1a1;
-  background-color: #fcfcfc;
-  color: #5e5e5e;
+  border: 1px solid ${(props) => (props.ativo ? '#1e90ff ' : '#a1a1a1 ')};
+  background-color: ${(props) => (props.ativo ? '#fff' : '#fcfcfc')};
+  color: ${(props) => (props.ativo ? '#1e90ff' : '#5e5e5e')};
   border-radius: 10px;
   background-color: #fcfcfc;
   width: 100%;

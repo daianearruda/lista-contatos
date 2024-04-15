@@ -6,7 +6,8 @@ const BarraLateral = () => (
     <S.Campo type="text" placeholder="Buscar" />
     <S.Filtros>
       <div>
-        <FiltroCard />
+        <FiltroCard legenda="Cadastros na sua agenda" contador={1} />
+        <S.Button>Gerar PDF</S.Button>
       </div>
     </S.Filtros>
   </S.Aside>

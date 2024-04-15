@@ -19,3 +19,10 @@ export const Campo = styled.input`
   color: #666666;
   width: 100%;
 `
+
+export const Button = styled.button`
+  margin-top: 1em;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+`

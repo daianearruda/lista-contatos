@@ -1,14 +1,15 @@
 import Contato from '../../components/Contato'
+import { Container } from './styles'
 
 const ListaContatos = () => (
-  <main>
+  <Container>
     <p>10 contatos cadastrados</p>
     <ul>
       <li>
         <Contato />
       </li>
     </ul>
-  </main>
+  </Container>
 )
 
 export default ListaContatos

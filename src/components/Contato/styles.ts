@@ -8,6 +8,7 @@ export const Card = styled.div`
   border-radius: 16px;
   padding: 16px;
   width: 50%;
+  min-width: 200px;
   margin-top: 2em;
   margin-bottom: 32px;
 `

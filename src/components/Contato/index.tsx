@@ -19,13 +19,15 @@ const Contato = ({ titulo, tel, email, descricao }: Props) => {
       <S.BarraAcoes>
         {estaEditando ? (
           <>
-            <S.Botao>Salvar</S.Botao>
-            <S.Botao onClick={() => setEstaEditando(false)}>Cancelar</S.Botao>
+            <S.BotaoSalvar>Salvar</S.BotaoSalvar>
+            <S.BotaoCancelar onClick={() => setEstaEditando(false)}>
+              Cancelar
+            </S.BotaoCancelar>
           </>
         ) : (
           <>
             <S.Botao onClick={() => setEstaEditando(true)}>Editar</S.Botao>
-            <S.Botao>Remover</S.Botao>
+            <S.BotaoCancelar>Remover</S.BotaoCancelar>
           </>
         )}
       </S.BarraAcoes>

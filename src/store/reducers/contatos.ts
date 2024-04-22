@@ -2,16 +2,39 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import Contato from '../../models/Contato'
 
+type ContatosState = {
+  itens: Contato[]
+}
+
+const initialState: ContatosState = {
+  itens: [
+    {
+      id: 1,
+      titulo: '',
+      tel: '',
+      email: '',
+      descricao: ''
+    },
+    {
+      id: 2,
+      titulo: '',
+      tel: '',
+      email: '',
+      descricao: ''
+    },
+    {
+      id: 3,
+      titulo: '',
+      tel: '',
+      email: '',
+      descricao: ''
+    }
+  ]
+}
+
 const contatoSlice = createSlice({
   name: 'contatos',
-  initialState: {
-    itens: [
-      new Contato('Daiane Arruda', '489556565', 'daiane@daiane.com', '', 1),
-      new Contato('Kat', '489556565', 'daiane@daiane.com', '', 2),
-      new Contato('Helcio', '486555565', 'daiane@daiane.com', '', 3),
-      new Contato('Maria', '4864456565', 'daiane@daiane.com', '', 4)
-    ]
-  },
+  initialState,
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
       state.itens = state.itens.filter(

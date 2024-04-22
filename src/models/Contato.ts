@@ -1,4 +1,4 @@
-class Contato {
+class ContatoClass {
   titulo: string
   tel: string
   email: string
@@ -19,3 +19,4 @@ class Contato {
     this.id = id
   }
 }
+export default ContatoClass

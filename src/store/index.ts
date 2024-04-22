@@ -4,8 +4,9 @@ import contatoReducer from './reducers/contatos'
 
 const store = configureStore({
   reducer: {
-    contato: contatoReducer
+    contatos: contatoReducer
   }
 })
 
 export type RootReducer = ReturnType<typeof store.getState>
+export default store

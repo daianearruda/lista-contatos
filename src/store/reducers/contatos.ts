@@ -10,24 +10,24 @@ const initialState: ContatosState = {
   itens: [
     {
       id: 1,
-      titulo: '',
-      tel: '',
-      email: '',
-      descricao: ''
+      titulo: 'Daiane',
+      tel: '48999524478',
+      email: 'example@example.com',
+      descricao: 'teste'
     },
     {
       id: 2,
-      titulo: '',
-      tel: '',
-      email: '',
+      titulo: 'Helcio',
+      tel: '46464',
+      email: 'example@example.com',
       descricao: ''
     },
     {
       id: 3,
-      titulo: '',
-      tel: '',
-      email: '',
-      descricao: ''
+      titulo: 'Raissa',
+      tel: '454798965',
+      email: 'example@example.com',
+      descricao: 'teste'
     }
   ]
 }

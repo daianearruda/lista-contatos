@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import Contato from '../../models/Contato'
+import ContatoClass from '../../models/Contato'
 
 type ContatosState = {
-  itens: Contato[]
+  itens: ContatoClass[]
 }
 
 const initialState: ContatosState = {
@@ -37,12 +37,20 @@ const contatoSlice = createSlice({
   initialState,
   reducers: {
     remover: (state, action: PayloadAction<number>) => {
-      state.itens = state.itens.filter(
-        (contato) => contato.id !== action.payload
+      state.itens = [
+        ...state.itens.filter((contato) => contato.id !== action.payload)
+      ]
+    },
+    editar: (state, action: PayloadAction<ContatoClass>) => {
+      const indexContato = state.itens.findIndex(
+        (t) => t.id === action.payload.id
       )
+      if (indexContato >= 0) {
+        state.itens[indexContato] = action.payload
+      }
     }
   }
 })
 
-export const { remover } = contatoSlice.actions
+export const { remover, editar } = contatoSlice.actions
 export default contatoSlice.reducer

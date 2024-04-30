@@ -8,36 +8,70 @@ import ContatoClass from '../../models/Contato'
 type Props = ContatoClass
 
 const Contato = ({
-  titulo,
-  tel,
-  email,
+  titulo: tituloContato,
+  tel: numeroContato,
+  email: emailContato,
   descricao: descricaoOriginal,
   id
 }: Props) => {
   const dispatch = useDispatch()
   const [estaEditando, setEstaEditando] = useState(false)
-  const [descricao, setdescricao] = useState('')
+  const [descricao, setDescricao] = useState(descricaoOriginal)
+  const [titulo, setTitulo] = useState(tituloContato)
+  const [tel, setTel] = useState(numeroContato)
+  const [email, setEmail] = useState(emailContato)
 
   useEffect(() => {
-    if (descricaoOriginal.length > 0) {
-      setdescricao(descricaoOriginal)
+    if (!estaEditando) {
+      // Atualizar os estados apenas quando não estiver editando
+      setTitulo(tituloContato)
+      setTel(numeroContato)
+      setEmail(emailContato)
+      setDescricao(descricaoOriginal)
     }
-  }, [descricaoOriginal])
+  }, [
+    descricaoOriginal,
+    tituloContato,
+    numeroContato,
+    emailContato,
+    estaEditando
+  ])
 
   function cancelarEdicao() {
     setEstaEditando(false)
-    setdescricao(descricaoOriginal)
   }
+
   return (
     <S.Card>
-      <S.Titulo> {titulo}</S.Titulo>
-      <S.Input value={tel} type="text" placeholder=" Telefone" />
-      <S.Input value={email} type="text" placeholder=" Email" />
+      <S.Titulo>
+        {estaEditando ? (
+          <S.Input
+            value={titulo}
+            onChange={(evento) => setTitulo(evento.target.value)}
+          />
+        ) : (
+          titulo
+        )}
+      </S.Titulo>
+      <S.Input
+        value={tel}
+        onChange={(evento) => setTel(evento.target.value)}
+        type="text"
+        placeholder="Telefone"
+        disabled={!estaEditando}
+      />
+      <S.Input
+        value={email}
+        onChange={(evento) => setEmail(evento.target.value)}
+        type="text"
+        placeholder="Email"
+        disabled={!estaEditando}
+      />
       <S.Descricao
         disabled={!estaEditando}
         value={descricao}
-        onChange={(evento) => setdescricao(evento.target.value)}
-        placeholder=" Observações"
+        onChange={(evento) => setDescricao(evento.target.value)}
+        placeholder="Observações"
       />
       <S.BarraAcoes>
         {estaEditando ? (
@@ -64,7 +98,6 @@ const Contato = ({
           <>
             <S.Botao
               onClick={() => {
-                console.log('meu id é: ', id)
                 setEstaEditando(true)
               }}
             >

@@ -5,9 +5,9 @@ import { Container } from './styles'
 import { RootReducer } from '../../store'
 import Contato from '../../components/Contato'
 
-const ListaContatos = () => {
+export const ListaContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
-  const { termo, criterio } = useSelector((state: RootReducer) => state.filtro)
+  const { termo } = useSelector((state: RootReducer) => state.filtro)
 
   const filtraContato = () => {
     let contatosFiltrados = itens
@@ -24,15 +24,14 @@ const ListaContatos = () => {
     return contatosFiltrados
   }
 
+  const exibecontatos = filtraContato()
+
   return (
     <Container>
-      <p>{termo} contatos cadastrados</p>
+      <p>{exibecontatos.length} contatos cadastrados</p>
+
       <ul>
-        <li>{termo}</li>
-        <li>{criterio}</li>
-      </ul>
-      <ul>
-        {filtraContato().map((t) => (
+        {exibecontatos.map((t) => (
           <li key={t.titulo}>
             <Contato
               descricao={t.descricao}

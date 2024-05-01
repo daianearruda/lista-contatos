@@ -1,6 +1,7 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import * as S from './styles'
 import { alteraFiltro } from '../../store/reducers/filtro'
+import { RootReducer } from '../../store'
 
 export type Props = {
   ativo?: boolean
@@ -9,8 +10,9 @@ export type Props = {
   criterio: 'nome' | 'telefone' | 'email'
 }
 
-const FiltroCard = ({ ativo, contador, legenda, criterio }: Props) => {
+const FiltroCard = ({ contador, legenda, criterio }: Props) => {
   const dispatch = useDispatch()
+  const { filtro } = useSelector((state: RootReducer) => state)
 
   const filtrar = () => {
     dispatch(
@@ -20,7 +22,7 @@ const FiltroCard = ({ ativo, contador, legenda, criterio }: Props) => {
     )
   }
   return (
-    <S.Card ativo={ativo} onClick={filtrar}>
+    <S.Card onClick={filtrar}>
       <S.Contador>{contador}</S.Contador>
       <S.Label>{legenda}</S.Label>
     </S.Card>

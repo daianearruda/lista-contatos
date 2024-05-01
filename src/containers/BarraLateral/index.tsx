@@ -7,6 +7,16 @@ import { alteraTermo } from '../../store/reducers/filtro'
 const BarraLateral = () => {
   const dispatch = useDispatch()
   const { termo } = useSelector((state: RootReducer) => state.filtro)
+  const { itens } = useSelector((state: RootReducer) => state.contatos)
+
+  // Filtra os contatos com base no termo de busca
+  const contatosFiltrados = itens.filter(
+    (item) =>
+      item.titulo.toLowerCase().includes(termo?.toLowerCase() || '') ||
+      item.telefone.includes(termo || '') ||
+      item.email.toLowerCase().includes(termo?.toLowerCase() || '')
+  )
+
   return (
     <S.Aside>
       <S.Campo
@@ -19,9 +29,8 @@ const BarraLateral = () => {
         <div>
           <FiltroCard
             criterio="nome"
-            legenda="Cadastros na sua agenda"
-            contador={1}
-            ativo
+            legenda="Contatos na sua agenda"
+            contador={contatosFiltrados.length}
           />
           <S.Button>Gerar PDF</S.Button>
         </div>

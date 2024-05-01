@@ -9,7 +9,7 @@ type Props = ContatoClass
 
 const Contato = ({
   titulo: tituloContato,
-  tel: numeroContato,
+  telefone: numeroContato,
   email: emailContato,
   descricao: descricaoOriginal,
   id
@@ -18,7 +18,7 @@ const Contato = ({
   const [estaEditando, setEstaEditando] = useState(false)
   const [descricao, setDescricao] = useState(descricaoOriginal)
   const [titulo, setTitulo] = useState(tituloContato)
-  const [tel, setTel] = useState(numeroContato)
+  const [telefone, setTel] = useState(numeroContato)
   const [email, setEmail] = useState(emailContato)
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Contato = ({
         )}
       </S.Titulo>
       <S.Input
-        value={tel}
+        value={telefone}
         onChange={(evento) => setTel(evento.target.value)}
         type="text"
         placeholder="Telefone"
@@ -81,7 +81,7 @@ const Contato = ({
                 dispatch(
                   editar({
                     titulo,
-                    tel,
+                    telefone,
                     email,
                     descricao,
                     id

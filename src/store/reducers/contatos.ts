@@ -11,21 +11,21 @@ const initialState: ContatosState = {
     {
       id: 1,
       titulo: 'Daiane',
-      tel: '48999524478',
+      telefone: '48999524478',
       email: 'example@example.com',
       descricao: 'teste'
     },
     {
       id: 2,
       titulo: 'Helcio',
-      tel: '46464',
+      telefone: '46464',
       email: 'example@example.com',
       descricao: ''
     },
     {
       id: 3,
       titulo: 'Raissa',
-      tel: '454798965',
+      telefone: '454798965',
       email: 'example@example.com',
       descricao: 'teste'
     }

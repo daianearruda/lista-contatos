@@ -10,13 +10,13 @@ const ListaContatos = () => {
   const { termo, criterio } = useSelector((state: RootReducer) => state.filtro)
 
   const filtraContato = () => {
-    let contatosFiltrados = itens // Inicialmente, contatosFiltrados contém todos os itens
+    let contatosFiltrados = itens
 
     if (termo) {
       contatosFiltrados = contatosFiltrados.filter(
         (item) =>
           item.titulo.toLowerCase().includes(termo.toLowerCase()) ||
-          item.tel.includes(termo) ||
+          item.telefone.includes(termo) ||
           item.email.toLowerCase().includes(termo.toLowerCase())
       )
     }
@@ -36,7 +36,7 @@ const ListaContatos = () => {
           <li key={t.titulo}>
             <Contato
               descricao={t.descricao}
-              tel={t.tel}
+              telefone={t.telefone}
               titulo={t.titulo}
               email={t.email}
               id={t.id}

@@ -7,22 +7,30 @@ import Contato from '../../components/Contato'
 
 const ListaContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
-  const { termo } = useSelector((state: RootReducer) => state.filtro)
+  const { termo, criterio } = useSelector((state: RootReducer) => state.filtro)
 
   const filtraContato = () => {
-    return itens.filter((item) => {
-      // Verifica se o termo está presente em qualquer um dos campos (título, telefone, email)
-      return (
-        item.titulo.toLowerCase().includes(termo.toLowerCase()) ||
-        item.tel.includes(termo) ||
-        item.email.toLowerCase().includes(termo.toLowerCase())
+    let contatosFiltrados = itens // Inicialmente, contatosFiltrados contém todos os itens
+
+    if (termo) {
+      contatosFiltrados = contatosFiltrados.filter(
+        (item) =>
+          item.titulo.toLowerCase().includes(termo.toLowerCase()) ||
+          item.tel.includes(termo) ||
+          item.email.toLowerCase().includes(termo.toLowerCase())
       )
-    })
+    }
+
+    return contatosFiltrados
   }
 
   return (
     <Container>
       <p>{termo} contatos cadastrados</p>
+      <ul>
+        <li>{termo}</li>
+        <li>{criterio}</li>
+      </ul>
       <ul>
         {filtraContato().map((t) => (
           <li key={t.titulo}>

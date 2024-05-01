@@ -17,7 +17,12 @@ const BarraLateral = () => {
       />
       <S.Filtros>
         <div>
-          <FiltroCard legenda="Cadastros na sua agenda" contador={1} />
+          <FiltroCard
+            criterio="nome"
+            legenda="Cadastros na sua agenda"
+            contador={1}
+            ativo
+          />
           <S.Button>Gerar PDF</S.Button>
         </div>
       </S.Filtros>

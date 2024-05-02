@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import * as S from './styles'
 import { alteraFiltro } from '../../store/reducers/filtro'
-import { RootReducer } from '../../store'
 
 export type Props = {
   ativo?: boolean
@@ -12,7 +11,6 @@ export type Props = {
 
 const FiltroCard = ({ contador, legenda, criterio }: Props) => {
   const dispatch = useDispatch()
-  const { filtro } = useSelector((state: RootReducer) => state)
 
   const filtrar = () => {
     dispatch(

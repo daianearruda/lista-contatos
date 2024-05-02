@@ -5,7 +5,7 @@ import { Container } from './styles'
 import { RootReducer } from '../../store'
 import Contato from '../../components/Contato'
 
-export const ListaContatos = () => {
+const ListaContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
   const { termo } = useSelector((state: RootReducer) => state.filtro)
 

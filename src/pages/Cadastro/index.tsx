@@ -1,3 +1,11 @@
-const NovoCadastro = () => <div>novo contato</div>
+import BarraLateral from '../../containers/BarraLateral'
+import Formulario from '../../containers/Formulario'
+
+const NovoCadastro = () => (
+  <>
+    <BarraLateral />
+    <Formulario />
+  </>
+)
 
 export default NovoCadastro

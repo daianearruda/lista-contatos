@@ -15,8 +15,8 @@ export const Container = styled.div`
   grid-template-columns: 224px auto;
 `
 export const MainContaineir = styled.main`
-  padding: 0 40px;
-  height: 90vh;
+  padding: 0 2em;
+  height: 100vh;
   overflow-y: scroll;
 `
 export const Titulo = styled.h2`

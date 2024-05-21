@@ -9,8 +9,8 @@ export const Card = styled.div`
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 16px;
   padding: 16px;
-  width: 50%;
-  min-width: 200px;
+  width: 60%;
+  min-width: 300px;
   margin-top: 2em;
   margin-bottom: 32px;
 
@@ -31,6 +31,7 @@ export const Input = styled.input`
   justify-content: center;
   align-items: center;
   margin: 1em 0em 1em;
+  width: 80%;
   height: 30px;
   border-radius: 10px;
 `

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
+import { Botao } from '../../styles'
 
 export const Card = styled.div`
   background-color: #fcfcfc;
@@ -12,6 +13,11 @@ export const Card = styled.div`
   min-width: 200px;
   margin-top: 2em;
   margin-bottom: 32px;
+
+  label {
+    display: flex;
+    align-items: center;
+  }
 `
 
 export const Titulo = styled.h3`
@@ -45,18 +51,6 @@ export const Descricao = styled.textarea`
 export const BarraAcoes = styled.div`
   border-top: 1px solid #8b8b8b;
   padding-top: 16px;
-`
-
-export const Botao = styled.button`
-  font-size: 12px;
-  font-weight: bold;
-  color: #fff;
-  padding: 8px;
-  border: none;
-  cursor: pointer;
-  background-color: #2f3640;
-  border-radius: 8px;
-  margin-right: 8px;
 `
 
 export const BotaoCancelar = styled(Botao)`

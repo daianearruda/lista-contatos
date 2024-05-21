@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import * as S from './styles'
-import { BotaoSalvar } from '../../styles'
+import { Botao, BotaoSalvar } from '../../styles'
 import { remover, editar } from '../../store/reducers/contatos'
 import ContatoClass from '../../models/Contato'
 
@@ -45,6 +45,7 @@ const Contato = ({
   return (
     <S.Card>
       <S.Titulo>
+        {estaEditando && <em>Editando:</em>}
         {estaEditando ? (
           <S.Input
             value={titulo}
@@ -54,6 +55,7 @@ const Contato = ({
           titulo
         )}
       </S.Titulo>
+
       <S.Input
         value={telefone}
         onChange={(evento) => setTel(evento.target.value)}
@@ -97,13 +99,13 @@ const Contato = ({
           </>
         ) : (
           <>
-            <S.Botao
+            <Botao
               onClick={() => {
                 setEstaEditando(true)
               }}
             >
               Editar
-            </S.Botao>
+            </Botao>
             <S.BotaoCancelar
               onClick={() => {
                 console.log('ID do contato a ser removido:', id)

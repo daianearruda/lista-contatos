@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import ContatoClass from '../../models/Contato'
+import { alteraFiltro } from './filtro'
 
 type ContatosState = {
   itens: ContatoClass[]
@@ -48,9 +49,26 @@ const contatoSlice = createSlice({
       if (indexContato >= 0) {
         state.itens[indexContato] = action.payload
       }
+    },
+    cadastrar: (state, action: PayloadAction<Omit<ContatoClass, 'id'>>) => {
+      const contatoJaExiste = state.itens.find(
+        (contato) =>
+          contato.titulo.toLocaleLowerCase() ===
+          action.payload.titulo.toLocaleLowerCase()
+      )
+      if (contatoJaExiste) {
+        alert('Já existe um contato com esse nome')
+      } else {
+        const ultimoContato = state.itens[state.itens.length - 1]
+        const contatoNovo = {
+          ...action.payload,
+          id: ultimoContato ? ultimoContato.id + 1 : 1
+        }
+        state.itens.push(contatoNovo)
+      }
     }
   }
 })
 
-export const { remover, editar } = contatoSlice.actions
+export const { remover, editar, cadastrar } = contatoSlice.actions
 export default contatoSlice.reducer

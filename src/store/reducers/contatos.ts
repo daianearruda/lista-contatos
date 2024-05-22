@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import ContatoClass from '../../models/Contato'
-import { alteraFiltro } from './filtro'
 
 type ContatosState = {
   itens: ContatoClass[]
@@ -11,24 +10,10 @@ const initialState: ContatosState = {
   itens: [
     {
       id: 1,
-      titulo: 'Daiane',
-      telefone: '48999524478',
-      email: 'example@example.com',
-      descricao: 'teste'
-    },
-    {
-      id: 2,
-      titulo: 'Helcio',
-      telefone: '46464',
-      email: 'example@example.com',
-      descricao: ''
-    },
-    {
-      id: 3,
-      titulo: 'Raissa',
-      telefone: '454798965',
-      email: 'example@example.com',
-      descricao: 'teste'
+      titulo: 'Nome do Contato',
+      telefone: '(00) 00000 0000',
+      email: 'email@contato',
+      descricao: 'Observações '
     }
   ]
 }

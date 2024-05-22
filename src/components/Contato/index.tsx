@@ -57,19 +57,21 @@ const Contato = ({
       </S.Titulo>
 
       <S.Input
-        value={telefone}
-        onChange={(evento) => setTel(evento.target.value)}
-        type="text"
-        placeholder="Telefone"
-        disabled={!estaEditando}
-      />
-      <S.Input
         value={email}
         onChange={(evento) => setEmail(evento.target.value)}
         type="text"
         placeholder="Email"
         disabled={!estaEditando}
       />
+
+      <S.Input
+        value={telefone}
+        onChange={(evento) => setTel(evento.target.value)}
+        type="text"
+        placeholder="Telefone"
+        disabled={!estaEditando}
+      />
+
       <S.Descricao
         disabled={!estaEditando}
         value={descricao}

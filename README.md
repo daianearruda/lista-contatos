@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+## 📇 Funcionalidades
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Cadastro de contatos com nome, telefone, e-mail e observações.
+- Edição de contatos existentes.
+- Remoção de contatos da agenda.
+- Filtragem de contatos por nome, telefone ou e-mail.
 
-## Available Scripts
+## 🛠 Ferramentas Utilizadas
 
-In the project directory, you can run:
+### Linguagens e Frameworks
 
-### `npm start`
+- JavaScript (ES6+)
+- React.js
+- Redux
+- Redux Toolkit
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Gerenciamento de Estado 🔄
 
-### `npm test`
+O projeto utiliza o React com Redux para o gerenciamento de estado. O Redux é uma biblioteca de gerenciamento de estado previsível para aplicativos JavaScript, enquanto o Redux Toolkit foi utilizado para facilitar a configuração do Redux, fornecendo uma maneira mais eficiente de escrever código Redux, com menos configuração.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O estado da aplicação é gerenciado centralmente pelo Redux, o que facilita o compartilhamento de dados entre os componentes e o mantém em sincronia conforme as ações são despachadas.
 
-### `npm run build`
+Principais conceitos:
+- Reducers: para atualizar o estado da aplicação em resposta a ações específicas.
+- Actions: para descrever as mudanças de estado na aplicação.
+- Dispatchers: para despachar as actions e iniciar as mudanças de estado.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O Redux também é integrado ao React por meio do pacote `react-redux`, que permite conectar os componentes React ao store Redux e acessar o estado da aplicação e despachar actions em resposta a eventos do usuário ou ações assíncronas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### 📚 Bibliotecas Adicionais
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- react-redux: Utilizado para conectar o React com o Redux.
+- @reduxjs/toolkit: Fornece uma maneira mais eficiente de escrever código Redux, com menos configuração.
+- styled-components: Utilizado para estilização dos componentes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🖼 Capturas de Tela
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Tela inicial:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Captura de Tela 1](src/img/telainicial.png)
 
-## Learn More
+### Tela para cadastrar novo cadastro:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Captura de Tela 2](src/img/telanovocadastro.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Como Executar o Projeto
+
+1. Clone este repositório.
+2. Instale as dependências do projeto com `npm install`.
+3. Execute o projeto com `npm start`.
+

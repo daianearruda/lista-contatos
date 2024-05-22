@@ -13,11 +13,6 @@ export const Card = styled.div`
   min-width: 300px;
   margin-top: 2em;
   margin-bottom: 32px;
-
-  label {
-    display: flex;
-    align-items: center;
-  }
 `
 
 export const Titulo = styled.h3`
@@ -34,6 +29,12 @@ export const Input = styled.input`
   width: 80%;
   height: 30px;
   border-radius: 10px;
+  border: none;
+  background: linear-gradient(
+    to right,
+    ${variaveis.roxoclaro},
+    ${variaveis.roxoescuro}
+  );
 `
 
 export const Descricao = styled.textarea`

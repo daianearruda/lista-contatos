@@ -38,14 +38,12 @@ const BarraLateral = ({ mostrarFiltro }: Props) => {
               onChange={(evento) => dispatch(alteraTermo(evento.target.value))}
             />
             <S.Filtros>
-              <div>
-                <FiltroCard
-                  criterio="nome"
-                  legenda="Contatos na sua agenda"
-                  contador={contatosFiltrados.length}
-                />
-                <S.Button>Gerar PDF</S.Button>
-              </div>
+              <FiltroCard
+                criterio="nome"
+                legenda="Contatos na sua agenda"
+                contador={contatosFiltrados.length}
+              />
+              <S.Button>Gerar PDF</S.Button>
             </S.Filtros>
           </>
         ) : (

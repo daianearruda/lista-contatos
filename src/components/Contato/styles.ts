@@ -13,6 +13,11 @@ export const Card = styled.div`
   min-width: 300px;
   margin-top: 2em;
   margin-bottom: 32px;
+  transition: box-shadow 0.9s ease;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 `
 
 export const Titulo = styled.h3`

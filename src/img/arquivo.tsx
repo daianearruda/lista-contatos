@@ -1,4 +1,3 @@
-import React from 'react'
 import { ReactComponent as MinhaImagemSVG } from './contact-us-animate.svg'
 
 const MeuComponente = () => {

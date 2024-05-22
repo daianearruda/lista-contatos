@@ -43,7 +43,6 @@ const BarraLateral = ({ mostrarFiltro }: Props) => {
                 legenda="Contatos na sua agenda"
                 contador={contatosFiltrados.length}
               />
-              <S.Button>Gerar PDF</S.Button>
             </S.Filtros>
           </>
         ) : (

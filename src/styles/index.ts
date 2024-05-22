@@ -53,9 +53,15 @@ export const Botao = styled.button`
   padding: 8px;
   border: none;
   cursor: pointer;
-  background-color: ${variaveis.azulEscuro};
+  background-color: ${variaveis.amarelo2};
   border-radius: 8px;
   margin-right: 8px;
+  transition: box-shadow 0.25s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `
 export const BotaoSalvar = styled(Botao)`
   background-color: ${variaveis.verde};

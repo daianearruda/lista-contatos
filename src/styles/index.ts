@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import variaveis from './variaveis'
-import relogioImg from '../img/relogios.jpg'
+import imgFundo from '../img/imgFundo.jpg'
 
 const EstiloGlobal = createGlobalStyle`
 *{
@@ -19,12 +19,7 @@ export const MainContaineir = styled.main`
   padding: 0 2em;
   height: 100vh;
   overflow-y: scroll;
-  // background: linear-gradient(
-  //     rgba(255, 255, 255, 0.3),
-  //     rgba(255, 255, 255, 0.1)
-  //   ),
-  //   url(${relogioImg});
-  background-image: url(${relogioImg});
+  background-image: url(${imgFundo});
   background-size: cover;
   background-position: center;
 `

@@ -11,4 +11,9 @@ export const Form = styled.form`
     resize: none;
     margin: 16px 0;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    align-items: center;
+  }
 `

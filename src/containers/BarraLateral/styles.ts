@@ -8,6 +8,10 @@ export const Aside = styled.aside`
   box-shadow: 10px 0 20px rgba(0, 0, 0, 0.9),
     /* Sombra principal para o efeito 3D */ 3px 0 50px rgba(0, 0, 0, 0.9); /* Sombra adicional para esfumar a borda direita */
   z-index: 1;
+
+  @media (max-width: 768px) {
+    height: 20vh;
+  }
 `
 
 export const Filtros = styled.div`

@@ -14,6 +14,10 @@ const EstiloGlobal = createGlobalStyle`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 224px auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `
 export const MainContaineir = styled.main`
   padding: 0 2em;
@@ -22,6 +26,10 @@ export const MainContaineir = styled.main`
   background-image: url(${imgFundo});
   background-size: cover;
   background-position: center;
+
+  @media (max-width: 768px) {
+    padding: 0em 5em;
+  }
 `
 export const Titulo = styled.h2`
   display: block;

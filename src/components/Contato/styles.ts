@@ -18,6 +18,10 @@ export const Card = styled.div`
   &:hover {
     transform: scale(1.01);
   }
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `
 
 export const Titulo = styled.h3`

@@ -28,7 +28,8 @@ export const MainContaineir = styled.main`
   background-position: center;
 
   @media (max-width: 768px) {
-    padding: 0em 5em;
+    margin: 0;
+    align-items: center;
   }
 `
 export const Titulo = styled.h2`
